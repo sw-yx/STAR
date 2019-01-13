@@ -13,7 +13,7 @@ export default {
   paths: {
     // src: 'src', // The source directory. Must include an index.js entry file.
     // temp: 'tmp', // Temp output directory for build files not to be published.
-    dist: 'docs', // The production output directory.
+    // dist: 'docs', // The production output directory.
     // devDist: 'tmp/dev-server', // The development scratch directory.
     // public: 'public', // The public directory (files copied to dist during build)
     // assets: 'docs', // The output directory for bundled JS and CSS
