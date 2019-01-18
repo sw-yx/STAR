@@ -5,7 +5,7 @@
     "tailwind:css": "tailwind build src/app.css -c  tailwind.js -o src/tailwind.css",
     "start": "npm run tailwind:css && react-static start",
     "stage": "react-static build --staging",
-    "build": "npm run tailwind:css && react-static build",
+    "build": "react-static build",
     "bundle": "react-static bundle",
     "export": "react-static export",
     "serve": "serve dist -p 3000 -s"

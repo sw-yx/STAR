@@ -7,26 +7,29 @@ type Article = {
   image: string
   title: string
 }
-export default withRouteData(({ articles }: { articles: Article[] }) => (
-  <div className="mb-8">
-    <div className="flex items-baseline justify-between border-b-2 border-grey-light mb-10">
-      <h2 className="text-base font-display font-bold tracking-wide uppercase py-4 border-b-2 border-indigo -mb-2px">
-        Articles
-      </h2>
-      <a
-        href="https://medium.com/@refactoringui"
-        className="font-semibold text-indigo-dark hover:underline no-underline"
-      >
-        View All
-      </a>
-    </div>
-    <div className="flex flex-wrap -mx-3">
-      {articles.map((article: Article) => (
-        <Card key={article.title} article={article} />
-      ))}
-    </div>
-  </div>
-))
+export default withRouteData(
+  ({ articles }: { articles?: Article[] }) =>
+    articles && (
+      <div className="mb-8">
+        <div className="flex items-baseline justify-between border-b-2 border-grey-light mb-10">
+          <h2 className="text-base font-display font-bold tracking-wide uppercase py-4 border-b-2 border-indigo -mb-2px">
+            Articles
+          </h2>
+          <a
+            href="https://medium.com/@refactoringui"
+            className="font-semibold text-indigo-dark hover:underline no-underline"
+          >
+            View All
+          </a>
+        </div>
+        <div className="flex flex-wrap -mx-3">
+          {articles.map((article: Article) => (
+            <Card key={article.title} article={article} />
+          ))}
+        </div>
+      </div>
+    ),
+)
 
 function Card({ article }: { article: Article }) {
   console.log({ article })

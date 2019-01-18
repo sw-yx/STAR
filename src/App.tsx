@@ -1,5 +1,8 @@
 import React from 'react'
-import { Root, Routes } from 'react-static'
+import {
+  Root,
+  // Routes
+} from 'react-static'
 // import { Link } from '@reach/router'
 
 import './tailwind.css'
@@ -105,9 +108,9 @@ function App() {
       <div className="font-sans text-black antialiased leading-tight bg-grey-lighter">
         {/* <Banner /> */}
         <Hero />
-        <div className="container lg:max-w-screen-lg mx-auto px-6 py-10">
+        {/* <div className="container lg:max-w-screen-lg mx-auto px-6 py-10">
           <Routes />
-        </div>
+        </div> */}
         <Footer />
         {/* <nav>
           <Link to="/">Home</Link>

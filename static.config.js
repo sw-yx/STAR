@@ -24,27 +24,27 @@ export default {
   },
   // siteRoot: 'https://starframework.github.io',
   // basePath: 'STAR',
-  getRoutes: async () => {
-    const props = await jdown('content')
-    const { articles } = props
-    return [
-      {
-        path: '/',
-        getData: () => ({ articles }),
-      },
-      // {
-      //   path: '/articles',
-      //   getData: () => ({
-      //     articles,
-      //   }),
-      //   // children: posts.slice(1, 3).map(post => ({
-      //   //   path: `/post/${post.id}`,
-      //   //   component: 'src/containers/Post',
-      //   //   getData: () => ({
-      //   //     post,
-      //   //   }),
-      //   // })),
-      // },
-    ]
-  },
+  // getRoutes: async () => {
+  //   const props = await jdown('content')
+  //   const { articles } = props
+  //   return [
+  //     {
+  //       path: '/',
+  //       getData: () => ({ articles }),
+  //     },
+  //     // {
+  //     //   path: '/articles',
+  //     //   getData: () => ({
+  //     //     articles,
+  //     //   }),
+  //     //   // children: posts.slice(1, 3).map(post => ({
+  //     //   //   path: `/post/${post.id}`,
+  //     //   //   component: 'src/containers/Post',
+  //     //   //   getData: () => ({
+  //     //   //     post,
+  //     //   //   }),
+  //     //   // })),
+  //     // },
+  //   ]
+  // },
 }
