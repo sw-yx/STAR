@@ -11,9 +11,12 @@
     "serve": "serve dist -p 3000 -s"
   },
   "dependencies": {
+    "@mdx-js/loader": "^0.16.6",
     "@reach/router": "^1.2.1",
     "@types/styled-components": "^4.1.5",
     "axios": "^0.18.0",
+    "chokidar": "^2.0.4",
+    "jdown": "^0.6.6",
     "react": "^16.8.0-alpha.0",
     "react-dom": "^16.8.0-alpha.0",
     "react-hot-loader": "^4.3.12",

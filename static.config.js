@@ -1,8 +1,12 @@
 import axios from 'axios'
 import path from 'path'
-
 // Paths Aliases defined through tsconfig.json
 const typescriptWebpackPaths = require('./webpack.config.js')
+
+import jdown from 'jdown'
+import chokidar from 'chokidar'
+import { reloadRoutes } from 'react-static/node'
+chokidar.watch('content').on('all', () => reloadRoutes())
 
 export default {
   plugins: ['react-static-plugin-typescript'],
@@ -21,23 +25,26 @@ export default {
   // siteRoot: 'https://starframework.github.io',
   // basePath: 'STAR',
   getRoutes: async () => {
-    const { data: posts } = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts',
-    )
+    const props = await jdown('content')
+    const { articles } = props
     return [
       {
-        path: '/blog',
-        getData: () => ({
-          posts,
-        }),
-        children: posts.slice(1, 3).map(post => ({
-          path: `/post/${post.id}`,
-          component: 'src/containers/Post',
-          getData: () => ({
-            post,
-          }),
-        })),
+        path: '/',
+        getData: () => ({ articles }),
       },
+      // {
+      //   path: '/articles',
+      //   getData: () => ({
+      //     articles,
+      //   }),
+      //   // children: posts.slice(1, 3).map(post => ({
+      //   //   path: `/post/${post.id}`,
+      //   //   component: 'src/containers/Post',
+      //   //   getData: () => ({
+      //   //     post,
+      //   //   }),
+      //   // })),
+      // },
     ]
   },
 }
